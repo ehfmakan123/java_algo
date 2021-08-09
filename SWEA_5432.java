@@ -18,7 +18,7 @@ public class IronStick {
 			
 			String str = br.readLine();
 			
-			for(int i = 0 ; i < str.length() -1 ; i++) {
+			for(int i = 0 ; i < str.length()  ; i++) {
 				if(str.charAt(i) == '(' && str.charAt(i+1) == ')') { // 레이저 포인트
 					result += cnt; // 막대가 레이저 만나면 현재 막대수만큼 잘려나감
 					i++;
@@ -30,8 +30,7 @@ public class IronStick {
 				}
 				
 			}
-			sb.append((result+1)+"\n"); // 전부 끝나면서 +1
-			//System.out.println("#"+t +" "+(result+1));
+			sb.append((result)+"\n");
 			
 		}
 		System.out.print(sb);
