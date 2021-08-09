@@ -5,7 +5,7 @@ import java.util.*;
 public class Rc_Car {
 
 	public static void main(String[] args) throws Exception{
-		System.setIn(new FileInputStream("res/input.txt")); // input 입력
+		System.setIn(new FileInputStream("res/Rc_Car_input.txt")); // input 입력
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringBuilder sb = new StringBuilder();
 		
@@ -30,7 +30,7 @@ public class Rc_Car {
 					v += Integer.parseInt(st.nextToken()); 
 					break;
 				case 2: // 2면 그다음 받는 값만큼 속도를 -
-					v =+ Integer.parseInt(st.nextToken());
+					v -= Integer.parseInt(st.nextToken());
 					break;
 				}
 				if(v<0) { // 중간에 속도가 음수가 되면 0으로 초기화
