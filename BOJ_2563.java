@@ -10,7 +10,7 @@ public class Confetii {
 //두 번째 자연수는 색종이의 아래쪽 변과 도화지의 아래쪽 변 사이의 거리이다.
 //색종이의 수는 100 이하이며, 색종이가 도화지 밖으로 나가는 경우는 없다.
 
-		System.setIn(new FileInputStream("res/input.txt"));
+		//System.setIn(new FileInputStream("res/input.txt"));
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringBuilder sb = new StringBuilder();
 		
