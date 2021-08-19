@@ -37,6 +37,7 @@ public class Ref {
 		}
 		
 		System.out.print(res);
+		br.close();
 	}
 
 }
