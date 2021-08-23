@@ -25,7 +25,7 @@ public class stack {
 			// stack 에 쌓은 원소가 val 이 아닌경우
 			else if(stack.peek() != val) {
 				System.out.println("NO");
-				return; // 한해주면 null point에러
+				return; // 안해주면 null point에러
 			}
 			stack.pop();
 			sb.append("-").append("\n");
