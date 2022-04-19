@@ -1,29 +1,35 @@
 package Test;
 
-public class Test {
-	private static int cnt = 0 ;
-	private static int comb(int n ,int r) {
-		// 자신을 포함해서 r개를 만드는 경우의 수 + 자신을 포함 X r 개 경우의 수.
-		if(r == 0 || n == r ) return 1; // 뽑을게 0  or  n == r
-		return comb(n-1 ,r-1) + comb(n-1 , r);
-	}
-	public static void main(String[] args) {
-		
-		hanoi(3,1,2,3);
-		System.out.println(cnt);
-		cnt = 0;
-		hanoi(4,1,2,3);
-		System.out.println(cnt);
-	}
-	private static void hanoi(int n , int start , int temp, int dest) {
-		if(n==0)return;
-		// 자신의위쪽의 n-1개 원판 들어내기 : 임시기둥으로 옮겨야해
-		hanoi(n-1 , start ,dest , temp);
-		// 자신의 원판 옮기기 : 목적기둥
-		System.out.println(n+":"+start + ">" +dest);
-		// 들어낸 임시기둥의 n-1개 원판 자신위에 쌓기 : 목적기둥으로 옮기기..?
-		hanoi(n-1,temp,start , dest);
-		cnt++;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+public class Hanoi_BOJ11729 {
+static StringBuilder sb; // StringBuilder 로 모아서 안하면 시관초과 ...
+	public static void main(String[] args) throws Exception{
+		// TODO Auto-generated method stub
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		sb = new StringBuilder();
+		int N = Integer.parseInt(br.readLine());
+		sb.append(((int)Math.pow(2, N) -1)+"\n");
+		hanoi(N,1,2,3); // N , 출발 , 중간 , 목적지
+		System.out.println(sb.toString());
 	}
 
+	private static void hanoi(int n, int start, int mid,  int dest) {
+		// TODO Auto-generated method stub
+		if(n == 1) { // 이동할 원판이 하나면 그냥 이동 가능
+			sb.append((start+" "+dest+"\n"));
+			return;
+		}
+		// A -> C
+		hanoi(n-1 , start , dest ,mid); // n-1개의 원판을 start 에서 mid 로 이동 (haoni (n-1))
+		
+		sb.append(start+" "+dest+"\n"); // 1개를 목적지로 이동(젤 큰 원판 1개) (n-1개 원판 이동 후 남은 원판 1개)
+		
+		hanoi(n-1,mid,start,dest); // 위에 나머지 n-1개를 mid 에서 dest 로 이동
+	}
+
+
 }
+
+//하노이는 왜 계속해도 오랜만에 하면 또 생각이 안날까요 ㅠㅠ
