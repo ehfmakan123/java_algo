@@ -17,3 +17,5 @@ public class ReverseWord {
 	}
 
 }
+
+//String 은 정적 StringBuilder / StringBuffer => 가변
