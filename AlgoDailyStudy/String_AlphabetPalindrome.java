@@ -26,8 +26,18 @@ public class AlphabetPalindrome {
 		}else {
 			System.out.println("NO");
 		}
-//		System.out.println(tmp);
-//		System.out.println(sb.toString());
+		
+		
+//		######################### 두번째 방법########################(정규식 사용)
+// 		str = str.toUpperCase().replaceAll("[^A-Z]", "");
+// 		String tmp = new StringBuilder(str).reverse().toString();
+// 		if(str.equals(tmp)) {
+// 			System.out.println("YES");
+// 		}else {
+// 			System.out.println("No");
+// 		}
+// 		#############################################################
+		
 	}
 
 }
