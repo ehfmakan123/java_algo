@@ -19,7 +19,7 @@ public class CombZero {
 		
 	}
 
-	private static int two(long x) {
+	private static int two(long x) { // fact N 이 2를 포함한 갯수
 		// TODO Auto-generated method stub
 		int res = 0 ;
 		
@@ -31,7 +31,7 @@ public class CombZero {
 		return res;
 	}
 
-	private static int five(Long x) {
+	private static int five(Long x) { // fact N이 5를 포함한 
 		// TODO Auto-generated method stub
 		int res = 0 ;
 		
