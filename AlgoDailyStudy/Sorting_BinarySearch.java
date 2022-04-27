@@ -31,7 +31,7 @@ public class BinarySearch {
 		int res = 0;
 		int lt = 0, rt = N-1;
 		
-		// 이분탐색이 더 빠른거 같은데??? 모지?
+		// 이분탐색이 더 빠름 O(logN)
 		while(lt <= rt) {
 			int mid = (lt+rt) /2;
 			if(arr[mid] == M) {
