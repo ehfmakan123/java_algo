@@ -6,8 +6,8 @@ import java.util.StringTokenizer;
 
 public class RidingBadook {
 static int C , N ,answer;
-boolean flag ;
-	public static void main(String[] args)throws Exception {
+//static boolean flag ;
+	public static void main(String[] args) throws Exception {
 		// TODO Auto-generated method stub
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine());
@@ -15,6 +15,9 @@ boolean flag ;
 		C = Integer.parseInt(st.nextToken());
 		N = Integer.parseInt(st.nextToken());
 		int[] arr =new int[N];
+		for(int i = 0 ; i < N ; i++) {
+			arr[i] = Integer.parseInt(br.readLine());
+		}
 		answer = -1; // 초기화
 		
 		dfs(0,0,arr);
@@ -28,8 +31,8 @@ boolean flag ;
 		}
 		else {
 			dfs(L+1 , sum+arr[L] , arr); // 현재 배열을 추가하는 경우의 수
-			dfs(L+1 , sum , arr);	// 현재 배열을 추가하지 않는 경우의 수		}
-		
+			dfs(L+1 , sum , arr);	// 현재 배열을 추가하지 않는 경우의 수		
+		}
 	}
 
 }
