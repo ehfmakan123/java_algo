@@ -16,16 +16,26 @@ public class Main {
 	public String solution(String str) {
 		String answer = "YES" ;
 		str = str.toUpperCase();
-		char s [] = str.toCharArray();
-		int lt = 0 , rt = str.length()-1;
-		while(lt < rt) {
-			if(s[lt] == s[rt]) {
-				lt++;
-				rt--;
-			}else {
-				answer = "NO";
-				break;
-			}
+// ############### 각 앞뒤 문자를 하나씩 비교하는 방법 #############
+//		char s [] = str.toCharArray();
+//		int lt = 0 , rt = str.length()-1;
+//		while(lt < rt) {
+//			if(s[lt] == s[rt]) {
+//				lt++;
+//				rt--;
+//			}else {
+//				answer = "NO";
+//				break;
+//			}
+//		}
+//
+//
+//
+//################### StringBuilder를 사용해 뒤집은 문자를 비교   ###########
+		
+		String tmp = new StringBuilder(str).reverse().toString();
+		if(!str.equals(tmp)) {
+			answer = "NO";
 		}
 		return answer;
 	}
@@ -49,6 +59,7 @@ public class Main {
 //첫 번째 줄에 회문 문자열인지의 결과를 YES 또는 NO로 출력합니다.
 //
 //
+
 
 // 회문 문자열 문제 , 이전에는 StringBuilder로 받은 후 이전 문자와 equals를 이용하여 각 자리를 비교한 후 풀었음
 // 이번에는 각 자리를 비교해가면서 풀었음.
