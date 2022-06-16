@@ -19,8 +19,27 @@ public class Main {
 	}
 	public ArrayList<String> solution(int N , String[] str) {
 		ArrayList<String> answer = new ArrayList<>();
+// 	#######################StringBuilder 를 이용한 방법 #######################
+// 		for(String x : str) {
+// 			String tmp = new StringBuilder(x).reverse().toString();
+// 			answer.add(tmp);
+// 		}
+//      ############################################################################
+// 
+//
+//
+//     ######################## String을 이용해 그대로 뒤집는 방법 ######################
 		for(String x : str) {
-			String tmp = new StringBuilder(x).reverse().toString();
+			char [] s = x.toCharArray();
+			int lt = 0 , rt = x.length()-1;
+			while(lt < rt) {
+				char tmp = s[lt];
+				s[lt] = s[rt];
+				s[rt] = s[lt];
+				lt++;
+				rt--;
+			}
+			String tmp = String.valueOf(s);
 			answer.add(tmp);
 		}
 		return answer;
@@ -43,6 +62,8 @@ public class Main {
 //N개의 단어를 입력된 순서대로 한 줄에 하나씩 뒤집어서 출력합니다.
 
 // StringBuilder 사용 , reverse() , toString() 메소드를 이용하여 단어 뒤집기 및 String 형변환 가능 buffer도 동일 기능 존재
+// String을 뒤집는 방법의 경우 char 형태로 변환하여 단어를 뒤집어 준 후 String.ValueOf()를 이용하여 String으로 변환해준다.
+
 // ArrayList<E> 에 들어가는 <E> => 제네릭(Generic)
 // 사용할 객체의 타입을 지정해주는 역할
 // 타입 안정성 및 불필요한 형변환을 줄여 코드 간결성 부여
