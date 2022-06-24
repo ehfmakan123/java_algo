@@ -15,6 +15,9 @@ public class Main {
 		chk[s] = true;	// 처음 시작위치 s 는 방문 체크해주기
 		q.offer(s);	// 큐에 루트를 넣어준다.
 		int L = 0;	// 루트는 레벨 0 (이동 거리 0)
+		if(s == e) {
+			return 0; // 처음 시작시 스타트와 엔드가 같을 때 (예외처리)
+		}
 		while(!q.isEmpty()) {	// 큐에 넣은 친구들을 하나씩 꺼내서 볼거야
 			int len = q.size();	// 큐의 크기만큼 레벨 순환
 			for(int i = 0; i < len ;i++) {
